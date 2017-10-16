@@ -13,11 +13,6 @@
         <mapping class="by.javastudy.hibernate.dao.ContactHobbyDetailEntity"/>
         <mapping class="by.javastudy.hibernate.dao.ContactTelDetailEntity"/>
         <mapping class="by.javastudy.hibernate.dao.HobbyEntity"/>
-        <mapping resource="by/javastudy/hibernate/dao/ContactEntity.hbm.xml"/>
-        <mapping resource="by/javastudy/hibernate/dao/ContactHobbyDetailEntity.hbm.xml"/>
-        <mapping resource="by/javastudy/hibernate/dao/ContactTelDetailEntity.hbm.xml"/>
-        <mapping resource="by/javastudy/hibernate/dao/HobbyEntity.hbm.xml"/>
-
 
     </session-factory>
 </hibernate-configuration>
