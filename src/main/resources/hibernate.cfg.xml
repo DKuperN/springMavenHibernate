@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <mapping class="by.javastudy.hibernate.dao.ContactEntity"/>
+        <mapping class="by.javastudy.hibernate.dao.ContactHobbyDetailEntity"/>
+        <mapping class="by.javastudy.hibernate.dao.ContactTelDetailEntity"/>
+        <mapping class="by.javastudy.hibernate.dao.HobbyEntity"/>
+        <mapping resource="by/javastudy/hibernate/dao/ContactEntity.hbm.xml"/>
+        <mapping resource="by/javastudy/hibernate/dao/ContactHobbyDetailEntity.hbm.xml"/>
+        <mapping resource="by/javastudy/hibernate/dao/ContactTelDetailEntity.hbm.xml"/>
+        <mapping resource="by/javastudy/hibernate/dao/HobbyEntity.hbm.xml"/>
+
+
+    </session-factory>
+</hibernate-configuration>
