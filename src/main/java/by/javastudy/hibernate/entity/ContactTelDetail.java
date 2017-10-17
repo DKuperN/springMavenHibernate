@@ -1,17 +1,16 @@
-package by.javastudy.hibernate.dao;
+package by.javastudy.hibernate.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contact_tel_detail", schema = "hibernatedb", catalog = "hibernatedb")
-public class ContactTelDetailEntity {
+@Table(name = "ContactTelDetail")
+public class ContactTelDetail {
     private int id;
     private String telType;
     private String telNumber;
     private int version;
 
     @Id
-    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
@@ -20,8 +19,7 @@ public class ContactTelDetailEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "tel_type", nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     public String getTelType() {
         return telType;
     }
@@ -30,8 +28,7 @@ public class ContactTelDetailEntity {
         this.telType = telType;
     }
 
-    @Basic
-    @Column(name = "tel_number", nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     public String getTelNumber() {
         return telNumber;
     }
@@ -40,8 +37,7 @@ public class ContactTelDetailEntity {
         this.telNumber = telNumber;
     }
 
-    @Basic
-    @Column(name = "version", nullable = false)
+    @Column(nullable = false)
     public int getVersion() {
         return version;
     }
@@ -55,7 +51,7 @@ public class ContactTelDetailEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ContactTelDetailEntity that = (ContactTelDetailEntity) o;
+        ContactTelDetail that = (ContactTelDetail) o;
 
         if (id != that.id) return false;
         if (version != that.version) return false;

@@ -1,11 +1,12 @@
-package by.javastudy.hibernate.dao;
+package by.javastudy.hibernate.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "contact", schema = "hibernatedb", catalog = "hibernatedb")
-public class ContactEntity {
+@Table(name = "Contact")
+public class Contact implements Serializable {
     private int id;
     private String firstName;
     private String lastName;
@@ -13,7 +14,7 @@ public class ContactEntity {
     private int version;
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(nullable = false)
     public int getId() {
         return id;
     }
@@ -22,8 +23,7 @@ public class ContactEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "first_name", nullable = false, length = 60)
+    @Column(nullable = false, length = 60)
     public String getFirstName() {
         return firstName;
     }
@@ -32,8 +32,7 @@ public class ContactEntity {
         this.firstName = firstName;
     }
 
-    @Basic
-    @Column(name = "last_name", nullable = false, length = 40)
+    @Column(nullable = false, length = 40)
     public String getLastName() {
         return lastName;
     }
@@ -43,7 +42,7 @@ public class ContactEntity {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "birth_date", nullable = true)
+    @Column
     public Date getBirthDate() {
         return birthDate;
     }
@@ -53,7 +52,7 @@ public class ContactEntity {
     }
 
     @Version
-    @Column(name = "version", nullable = false, insertable = true, updatable = true)
+    @Column(nullable = false)
     public int getVersion() {
         return version;
     }
@@ -67,7 +66,7 @@ public class ContactEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ContactEntity that = (ContactEntity) o;
+        Contact that = (Contact) o;
 
         if (id != that.id) return false;
         if (version != that.version) return false;

@@ -1,4 +1,4 @@
-package by.javastudy.hibernate.dao;
+package by.javastudy.hibernate.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,12 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hobby", schema = "hibernatedb", catalog = "hibernatedb")
-public class HobbyEntity {
+@Table(name = "Hobby")
+public class Hobby {
     private String hobbyId;
 
     @Id
-    @Column(name = "hobby_id", nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     public String getHobbyId() {
         return hobbyId;
     }
@@ -25,7 +25,7 @@ public class HobbyEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        HobbyEntity that = (HobbyEntity) o;
+        Hobby that = (Hobby) o;
 
         if (hobbyId != null ? !hobbyId.equals(that.hobbyId) : that.hobbyId != null) return false;
 

@@ -1,4 +1,4 @@
-package by.javastudy.hibernate.dao;
+package by.javastudy.hibernate.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -8,8 +8,8 @@ public class ContactHobbyDetailEntityPK implements Serializable {
     private int contactId;
     private String hobbyId;
 
-    @Column(name = "contact_id", nullable = false)
     @Id
+    @Column(name = "contact_id", nullable = false)
     public int getContactId() {
         return contactId;
     }
@@ -18,8 +18,8 @@ public class ContactHobbyDetailEntityPK implements Serializable {
         this.contactId = contactId;
     }
 
-    @Column(name = "hobby_id", nullable = false, insertable = false, updatable = false, length = 20)
     @Id
+    @Column(name = "hobby_id", nullable = false, insertable = false, updatable = false, length = 20)
     public String getHobbyId() {
         return hobbyId;
     }

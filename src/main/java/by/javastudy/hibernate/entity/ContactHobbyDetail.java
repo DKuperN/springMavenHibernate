@@ -1,16 +1,16 @@
-package by.javastudy.hibernate.dao;
+package by.javastudy.hibernate.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contact_hobby_detail", schema = "hibernatedb", catalog = "hibernatedb")
+@Table(name = "ContactHobbyDetail")
 @IdClass(ContactHobbyDetailEntityPK.class)
-public class ContactHobbyDetailEntity {
+public class ContactHobbyDetail {
     private int contactId;
     private String hobbyId;
 
     @Id
-    @Column(name = "contact_id", nullable = false)
+    @Column(nullable = false)
     public int getContactId() {
         return contactId;
     }
@@ -20,7 +20,7 @@ public class ContactHobbyDetailEntity {
     }
 
     @Id
-    @Column(name = "hobby_id", nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     public String getHobbyId() {
         return hobbyId;
     }
@@ -34,7 +34,7 @@ public class ContactHobbyDetailEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ContactHobbyDetailEntity that = (ContactHobbyDetailEntity) o;
+        ContactHobbyDetail that = (ContactHobbyDetail) o;
 
         if (contactId != that.contactId) return false;
         if (hobbyId != null ? !hobbyId.equals(that.hobbyId) : that.hobbyId != null) return false;
