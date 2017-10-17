@@ -5,17 +5,17 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ContactTelDetail")
 public class ContactTelDetail {
-    private int id;
+    private Integer id;
     private String telType;
     private String telNumber;
     private int version;
 
     @Id
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

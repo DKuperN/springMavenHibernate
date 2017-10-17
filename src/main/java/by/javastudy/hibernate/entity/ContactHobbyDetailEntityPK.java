@@ -5,16 +5,16 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 public class ContactHobbyDetailEntityPK implements Serializable {
-    private int contactId;
+    private Integer contactId;
     private String hobbyId;
 
     @Id
     @Column(name = "contact_id", nullable = false)
-    public int getContactId() {
+    public Integer getContactId() {
         return contactId;
     }
 
-    public void setContactId(int contactId) {
+    public void setContactId(Integer contactId) {
         this.contactId = contactId;
     }
 

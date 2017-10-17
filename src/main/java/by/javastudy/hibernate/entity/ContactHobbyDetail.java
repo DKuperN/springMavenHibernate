@@ -6,16 +6,16 @@ import javax.persistence.*;
 @Table(name = "ContactHobbyDetail")
 @IdClass(ContactHobbyDetailEntityPK.class)
 public class ContactHobbyDetail {
-    private int contactId;
+    private Integer contactId;
     private String hobbyId;
 
     @Id
     @Column(nullable = false)
-    public int getContactId() {
+    public Integer getContactId() {
         return contactId;
     }
 
-    public void setContactId(int contactId) {
+    public void setContactId(Integer contactId) {
         this.contactId = contactId;
     }
 

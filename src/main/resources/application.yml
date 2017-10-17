@@ -4,34 +4,18 @@ spring:
     username: root
     password: root
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate: ERROR
 
 
-
-
-
-#    tomcat:
-#      max-wait: 20000
-#      max-active: 50
-#      max-idle: 20
-#      min-idle: 15
-
-#spring:
-#  jpa:
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQLDialect
-#        id:
-#          new_generator_mappings: false
-#        format_sql: true
-#
-#logging:
-#  level:
-#    org:
-#      hibernate:
-#        SQL: DEBUG
-#        type:
-#          descriptor:
-#            sql:
-#              BasicBinder: TRACE
+welcome:
+  message: Hello Mkyong

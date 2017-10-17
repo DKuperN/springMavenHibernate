@@ -7,19 +7,20 @@ import java.util.Date;
 @Entity
 @Table(name = "Contact")
 public class Contact implements Serializable {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private Date birthDate;
     private int version;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false)
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
