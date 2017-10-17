@@ -1,6 +1,7 @@
 package by.javastudy.hibernate.main;
 
 import by.javastudy.hibernate.dao.ContactEntity;
+import by.javastudy.hibernate.utils.HibernateSessionFactory;
 import org.hibernate.Session;
 
 import javax.persistence.PersistenceException;
@@ -30,7 +31,7 @@ public class Main {
             out.println("message: " + sqlErr.getCause().getCause().getMessage());
             session.getTransaction().rollback();
         } finally {
-            session.close();
+            HibernateSessionFactory.shutdown();
         }
     }
 
