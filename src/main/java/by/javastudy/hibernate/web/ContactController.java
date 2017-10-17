@@ -4,9 +4,8 @@ import by.javastudy.hibernate.entity.Contact;
 import by.javastudy.hibernate.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ContactController {
@@ -18,5 +17,18 @@ public class ContactController {
     @GetMapping("/contact/{id}")
     public Contact get(@PathVariable Integer id) {
         return contactService.findById(id);
+    }
+
+    @GetMapping("/addContact")
+    public String addContact() {
+        return "addContact";
+    }
+
+//    @ResponseBody
+    @PostMapping(value = "/save")
+    public String save(@ModelAttribute("contact") Contact contact, Model model){
+        contactService.save(contact);
+        model.addAttribute("message", contact.getFirstName() + " " + contact.getLastName());
+        return "welcome";
     }
 }

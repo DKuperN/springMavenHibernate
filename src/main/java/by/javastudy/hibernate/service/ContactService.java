@@ -16,4 +16,9 @@ public class ContactService {
     public Contact findById(Integer id) {
         return contactDAO.findById(id);
     }
+
+    @Transactional
+    public void save(Contact contact) {
+        contactDAO.save(contact);
+    }
 }
