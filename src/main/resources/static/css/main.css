@@ -5,3 +5,6 @@ h1{
 h2{
     color:#FF0000;
 }
+.redBorder {
+    border: 1px solid red;
+}

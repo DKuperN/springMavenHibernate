@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
     // inject via application.properties
-    @Value("${welcome.message:Don Jo}")
+    @Value("${welcome.message:Anonim}")
     private String message = "Hello World";
 
     @RequestMapping("/")
