@@ -11,9 +11,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Service
 public class ContactService {
 
-    public static Boolean removeCollback;
-    public static AtomicBoolean aBoolean = new AtomicBoolean();
-
     @Autowired
     private ContactDAO contactDAO;
 
@@ -28,16 +25,8 @@ public class ContactService {
     }
 
     @Transactional
-    public void remove(Integer contactId) {
-        Contact contact = contactDAO.findById(contactId);
-        if(contact != null) {
-            contactDAO.remove(contact);
-            removeCollback = Boolean.TRUE;
-            aBoolean.set(true);
-        } else {
-            removeCollback = Boolean.FALSE;
-            aBoolean.set(false);
-        }
+    public boolean remove(Integer contactId) {
+        return contactDAO.removeById(contactId);
     }
 
     //TODO
